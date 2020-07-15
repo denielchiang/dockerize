@@ -1,0 +1,10 @@
+_build/
+deps/
+.git/
+.gitignore
+Dockerfile
+Makefile
+README*
+assets/node_modules/
+test/
+priv/static/
