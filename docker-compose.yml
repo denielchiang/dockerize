@@ -2,12 +2,12 @@ version: "3.5"
 
 networks:
   webnet:
-    driver: bridge # overlay
+    driver: overlay
     attachable: true # Needed in order to run custom commands in the container
 
 services:
   app:
-    image: dockerize:0.1.0
+    image: deniel79/dockerize:0.1.0
     ports:
       - "80:4000"
     env_file:
