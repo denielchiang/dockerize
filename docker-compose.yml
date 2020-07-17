@@ -7,7 +7,7 @@ networks:
 
 services:
   app:
-    image: deniel79/dockerize:0.1.0
+    image: deniel79/dockerize:0.1.1
     ports:
       - "80:4000"
     env_file:
@@ -30,10 +30,14 @@ services:
       restart_policy:
         condition: on-failure
     volumes:
-      - "./volumes/postgres:/var/lib/postgresql/data"
+      - pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     env_file:
       - config/docker.env
     networks:
       - webnet
+
+volumes:
+  pgdata:
+    external: true
